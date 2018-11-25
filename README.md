@@ -1,6 +1,6 @@
 # liquid-filters [![NPM version](https://img.shields.io/npm/v/liquid-filters.svg?style=flat)](https://www.npmjs.com/package/liquid-filters) [![NPM monthly downloads](https://img.shields.io/npm/dm/liquid-filters.svg?style=flat)](https://npmjs.org/package/liquid-filters) [![NPM total downloads](https://img.shields.io/npm/dt/liquid-filters.svg?style=flat)](https://npmjs.org/package/liquid-filters) [![Linux Build Status](https://img.shields.io/travis/jonschlinkert/liquid-filters.svg?style=flat&label=Travis)](https://travis-ci.org/jonschlinkert/liquid-filters)
 
-> Liquid filters, for any javascript template engine (including handlebars and lodash).
+> Liquid filters written in vanilla JavaScript, allowing them to be used with any template engine.
 
 Please consider following this project's author, [Jon Schlinkert](https://github.com/jonschlinkert), and consider starring the project to show your :heart: and support.
 
@@ -29,7 +29,13 @@ console.log(filters(['math', 'string']));
 
 ## Attribution
 
-Some of these filters were lifted from TinyLiquid by [Zongmin Lei](leizongmin@gmail.com).
+Some of these filters were ported from:
+
+* TinyLiquid by [Zongmin Lei](leizongmin@gmail.com)
+* Shopify Liquid
+* Jekyll
+
+TODO: add links before publishing.
 
 ## About
 
