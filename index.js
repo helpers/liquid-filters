@@ -1,24 +1,25 @@
 'use strict';
 
-let groups = require('./lib/filters');
+let filters = require('./lib/filters');
+let tags = require('./lib/tags');
 
-module.exports = function(type, options = {}) {
+module.exports = (type, options = {}) => {
   if (type) {
-    let group = groups[type];
+    let group = filters[type];
     if (typeof group === 'function') {
       return group(options);
     }
     return group;
   }
 
-  let filters = {};
-  let keys = Object.keys(groups);
-  let names = [];
+  let keys = Object.keys(filters);
   let arr = keys.slice();
+  let names = [];
+  let res = {};
 
   for (let i = 0; i < keys.length; i++) {
     let key = keys[i];
-    let group = groups[key];
+    let group = filters[key];
 
     if (typeof group === 'function') {
       group = group(options);
@@ -29,10 +30,12 @@ module.exports = function(type, options = {}) {
       if (names.includes(name)) {
         console.log('duplicate:', name);
       }
-      filters[name] = group[name];
+      res[name] = group[name];
       names.push(name);
     }
   }
 
-  return filters;
+  return res;
 };
+
+module.exports.tags = tags;
